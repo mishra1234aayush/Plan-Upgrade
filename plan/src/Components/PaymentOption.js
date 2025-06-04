@@ -158,10 +158,10 @@ const generateOrderId = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        alert(`✅ Plan upgraded to ${data.plan}`);
+        alert(`✅ Plan upgraded to ${planName}`);
         navigate("/",{
           state : {
-            plan : data.plan
+            plan : planName
           }
         });
       })
