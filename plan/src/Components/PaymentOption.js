@@ -151,7 +151,7 @@ const generateOrderId = () => {
 
   useEffect(() => {
   if (paymentStatus === "success") {
-    fetch("http://localhost:5000/api/upgrade-plan", {
+    fetch("https://plan-upgrade-backend.onrender.com/api/upgrade-plan", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ plan: planName }),
