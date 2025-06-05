@@ -151,17 +151,17 @@ const generateOrderId = () => {
 
   useEffect(() => {
   if (paymentStatus === "success") {
-    fetch("https://plan-upgrade-backend.onrender.com/api/upgrade-plan", {
+    fetch("http://localhost:5000/api/upgrade-plan", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ plan: planName }),
     })
       .then((res) => res.json())
       .then((data) => {
-        alert(`✅ Plan upgraded to ${planName}`);
+        alert(`✅ Plan upgraded to ${data.plan}`);
         navigate("/",{
           state : {
-            plan : planName
+            plan : data.plan
           }
         });
       })
